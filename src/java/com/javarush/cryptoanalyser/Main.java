@@ -2,6 +2,8 @@ package com.javarush.cryptoanalyser;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        Control control = new Control();
+        Menu menu = new Menu(control);
+        menu.start();
     }
 }

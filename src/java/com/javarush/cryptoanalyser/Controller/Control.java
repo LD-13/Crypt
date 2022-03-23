@@ -15,11 +15,11 @@ public class Control {
         if (Files.exists(Path.of(filePath))) {
             this.filePath = filePath;
             Path path = Path.of(filePath);
-            if(key>0) {
+            if (key > 0) {
                 encryptFilePath = path.getParent() + "\\encrypt_" + path.getFileName();
                 cryptFile(key);
                 return "Your encrypt file is " + encryptFilePath;
-            } else{
+            } else {
                 decryptFilePath = path.getParent() + "\\decrypt_" + path.getFileName();
                 deCryptFile();
                 return "Your decrypt file is " + decryptFilePath;
@@ -28,11 +28,11 @@ public class Control {
         return "File don't exist or the path is incorrect.";
     }
 
-    private void cryptFile(int key){
+    private void cryptFile(int key) {
         new Crypt(filePath, encryptFilePath, key);
     }
 
-    private void deCryptFile(){
+    private void deCryptFile() {
         new DeCrypt(filePath, decryptFilePath);
     }
 }
